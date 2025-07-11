@@ -1,5 +1,64 @@
 // 等待DOM加载完成
 document.addEventListener('DOMContentLoaded', function() {
+    // 动态生成随机位置的装饰图片
+    const generateRandomDecorativeImages = () => {
+        const leftImages = 60; // 左侧图片数量
+        const rightImages = 60; // 右侧图片数量
+        const animations = ['floatRandom1', 'floatRandom2', 'floatRandom3', 'floatRandom4'];
+        const leftAnimations = ['floatRandomLeft1', 'floatRandomLeft2', 'floatRandomLeft3', 'floatRandomLeft4'];
+        
+        // 生成左侧图片（马问.png，翻转）
+        for (let i = 0; i < leftImages; i++) {
+            const img = document.createElement('div');
+            img.className = 'decorative-images decorative-left';
+            img.innerHTML = '<img src="images/马问.png" alt="装饰图片">';
+            
+            // 随机位置（左侧20%区域）
+            const randomTop = Math.random() * 80 + 10; // 10% - 90%
+            const randomLeft = Math.random() * 15 + 2; // 2% - 17%
+            
+            img.style.top = randomTop + '%';
+            img.style.left = randomLeft + '%';
+            
+            // 随机动画
+            const randomAnimation = leftAnimations[Math.floor(Math.random() * leftAnimations.length)];
+            const randomDuration = (Math.random() * 4 + 4).toFixed(1); // 4-8秒
+            const randomDelay = (Math.random() * 3).toFixed(1); // 0-3秒延迟
+            
+            img.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+            img.style.animationDelay = randomDelay + 's';
+            
+            document.body.appendChild(img);
+        }
+        
+        // 生成右侧图片（牛问.png，正常方向）
+        for (let i = 0; i < rightImages; i++) {
+            const img = document.createElement('div');
+            img.className = 'decorative-images decorative-right';
+            img.innerHTML = '<img src="images/牛问.png" alt="装饰图片">';
+            
+            // 随机位置（右侧20%区域）
+            const randomTop = Math.random() * 80 + 10; // 10% - 90%
+            const randomRight = Math.random() * 15 + 2; // 2% - 17%
+            
+            img.style.top = randomTop + '%';
+            img.style.right = randomRight + '%';
+            
+            // 随机动画
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+            const randomDuration = (Math.random() * 4 + 4).toFixed(1); // 4-8秒
+            const randomDelay = (Math.random() * 3).toFixed(1); // 0-3秒延迟
+            
+            img.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+            img.style.animationDelay = randomDelay + 's';
+            
+            document.body.appendChild(img);
+        }
+    };
+    
+    // 生成装饰图片
+    generateRandomDecorativeImages();
+
     // 动态更新年龄
     const updateAge = () => {
         const currentYear = new Date().getFullYear();
@@ -116,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
         .nav-menu a.active {
-            color: #3498db !important;
+            color:# !important;
             position: relative;
         }
         
@@ -127,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 0;
             width: 100%;
             height: 2px;
-            background: #3498db;
+            background:#339a11;
             border-radius: 1px;
         }
     `;
@@ -269,7 +328,7 @@ const createBackToTop = () => {
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #3498db;
+        background: #27ca22;
         color: white;
         border: none;
         border-radius: 50%;
@@ -296,7 +355,7 @@ const createBackToTop = () => {
     });
     
     backToTopBtn.addEventListener('mouseleave', () => {
-        backToTopBtn.style.background = '#3498db';
+        backToTopBtn.style.background = '#339a11';
         backToTopBtn.style.transform = 'translateY(0)';
     });
     

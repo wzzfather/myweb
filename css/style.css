@@ -59,7 +59,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #3498db;
+    color: #27ca22;
 }
 
 .hamburger {
@@ -80,7 +80,7 @@ body {
 .hero {
     padding: 120px 0 80px;
     text-align: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #048112 0%, #0aa73ccb 100%);
     color: white;
     position: relative;
 }
@@ -158,7 +158,7 @@ body {
 
 .btn.primary {
     background: #fff;
-    color: #3498db;
+    color: #277c14d4;
 }
 
 .btn.primary:hover {
@@ -175,7 +175,7 @@ body {
 
 .btn.secondary:hover {
     background: #fff;
-    color: #3498db;
+    color: #27ca22;
     transform: translateY(-2px);
 }
 
@@ -203,7 +203,7 @@ body {
 .line {
     width: 60px;
     height: 4px;
-    background: linear-gradient(to right, #3498db, #2ecc71);
+    background: linear-gradient(to right, #27ca22, #2ecc71);
     margin: 0 auto;
     border-radius: 2px;
 }
@@ -222,7 +222,7 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #3498db;
+    background: #27ca22;
     transform: translateX(-50%);
 }
 
@@ -240,7 +240,7 @@ body {
 .timeline-dot {
     width: 20px;
     height: 20px;
-    background: #3498db;
+    background: #27ca22;
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -283,7 +283,7 @@ body {
 }
 
 .timeline-content .company {
-    color: #3498db;
+    color: #27ca22;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -308,7 +308,7 @@ body {
     content: '▸';
     position: absolute;
     left: 0;
-    color: #3498db;
+    color: #27ca22;
     font-weight: bold;
 }
 
@@ -357,7 +357,7 @@ body {
 }
 
 .project-link:hover {
-    color: #3498db;
+    color: #27ca22;
 }
 
 .project-description {
@@ -387,6 +387,10 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
     margin-top: 2rem;
+    padding: 5px; /* 新添加的5px外边距 */
+    max-width: 1000px; /* 限制最大宽度 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
 }
 
 .skills-category h3 {
@@ -399,7 +403,7 @@ body {
 }
 
 .skills-category h3 i {
-    color: #3498db;
+    color: #27ca22;
 }
 
 .skills-list {
@@ -427,7 +431,7 @@ body {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(to right, #3498db, #2ecc71);
+    background: linear-gradient(to right, #49bde8, #2ecc71);
     border-radius: 4px;
     transition: width 2s ease-in-out;
     width: 0%;
@@ -462,7 +466,7 @@ body {
 
 .contact-item i {
     font-size: 2rem;
-    color: #3498db;
+    color: #27ca22;
     width: 50px;
     text-align: center;
 }
@@ -562,6 +566,8 @@ body {
 
     .skills-container {
         grid-template-columns: 1fr;
+        max-width: 100%; /* 小屏幕时允许全宽 */
+        padding: 10px; /* 小屏幕时增加一些padding */
     }
 
     .contact-info {
@@ -607,10 +613,112 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #3498db;
+    background: #27ca22;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #2980b9;
+}
+
+/* 页面装饰图片 */
+.decorative-images {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.decorative-images img {
+    width: 50px; /* 原先100px的50% */
+    height: auto;
+    filter: grayscale(30%);
+}
+
+.decorative-images:hover img {
+    opacity: 0.8;
+    filter: grayscale(0%);
+}
+
+/* 左侧区域的图片（翻转） */
+.decorative-left {
+    transform: scaleX(-1);
+}
+
+/* 右侧区域的图片（正常方向） */
+.decorative-right {
+    transform: scaleX(1);
+}
+
+/* 随机浮动动画变种 */
+@keyframes floatRandom1 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-8px) translateX(5px); }
+    50% { transform: translateY(5px) translateX(-3px); }
+    75% { transform: translateY(-3px) translateX(8px); }
+}
+
+@keyframes floatRandom2 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(6px) translateX(-6px); }
+    66% { transform: translateY(-5px) translateX(4px); }
+}
+
+@keyframes floatRandom3 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    20% { transform: translateY(-4px) translateX(-2px); }
+    40% { transform: translateY(7px) translateX(6px); }
+    60% { transform: translateY(-6px) translateX(-4px); }
+    80% { transform: translateY(3px) translateX(5px); }
+}
+
+@keyframes floatRandom4 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-10px) translateX(8px); }
+}
+
+/* 左侧翻转图片的动画 */
+@keyframes floatRandomLeft1 {
+    0%, 100% { transform: scaleX(-1) translateY(0px) translateX(0px); }
+    25% { transform: scaleX(-1) translateY(-8px) translateX(-5px); }
+    50% { transform: scaleX(-1) translateY(5px) translateX(3px); }
+    75% { transform: scaleX(-1) translateY(-3px) translateX(-8px); }
+}
+
+@keyframes floatRandomLeft2 {
+    0%, 100% { transform: scaleX(-1) translateY(0px) translateX(0px); }
+    33% { transform: scaleX(-1) translateY(6px) translateX(6px); }
+    66% { transform: scaleX(-1) translateY(-5px) translateX(-4px); }
+}
+
+@keyframes floatRandomLeft3 {
+    0%, 100% { transform: scaleX(-1) translateY(0px) translateX(0px); }
+    20% { transform: scaleX(-1) translateY(-4px) translateX(2px); }
+    40% { transform: scaleX(-1) translateY(7px) translateX(-6px); }
+    60% { transform: scaleX(-1) translateY(-6px) translateX(4px); }
+    80% { transform: scaleX(-1) translateY(3px) translateX(-5px); }
+}
+
+@keyframes floatRandomLeft4 {
+    0%, 100% { transform: scaleX(-1) translateY(0px) translateX(0px); }
+    50% { transform: scaleX(-1) translateY(-10px) translateX(-8px); }
+}
+
+/* 在较小屏幕上隐藏装饰图片 */
+@media (max-width: 1200px) {
+    .decorative-images {
+        display: none;
+    }
+}
+
+/* 在超大屏幕上稍微增大装饰图片 */
+@media (min-width: 1600px) {
+    .decorative-images img {
+        width: 60px; /* 超大屏幕时稍大一些 */
+    }
+    
+    .skills-container {
+        max-width: 1200px; /* 超大屏幕时适度增加最大宽度 */
+    }
 }
