@@ -59,10 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 生成装饰图片
     generateRandomDecorativeImages();
 
-    // 动态更新年龄
+    // 动态更新年龄（与简历一致：按公历生日计算，避免仅用「当前年 − 出生年」造成的偏差）
     const updateAge = () => {
-        const currentYear = new Date().getFullYear();
-        const age = currentYear - 2000;
+        const birth = new Date(2001, 0, 1); // 与简历「25 岁（2026）」对齐的参考出生日
+        const now = new Date();
+        let age = now.getFullYear() - birth.getFullYear();
+        const m = now.getMonth() - birth.getMonth();
+        if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) {
+            age -= 1;
+        }
         const ageElement = document.getElementById('age-display');
         if (ageElement) {
             ageElement.textContent = age + '岁';
@@ -175,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
         .nav-menu a.active {
-            color:# !important;
+            color: #1faa4a !important;
             position: relative;
         }
         
@@ -186,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 0;
             width: 100%;
             height: 2px;
-            background:#339a11;
+            background: #27ca22;
             border-radius: 1px;
         }
     `;
@@ -328,7 +333,7 @@ const createBackToTop = () => {
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #27ca22;
+        background: linear-gradient(135deg, #25b86a 0%, #169c4a 100%);
         color: white;
         border: none;
         border-radius: 50%;
@@ -339,7 +344,7 @@ const createBackToTop = () => {
         font-size: 18px;
         z-index: 1000;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        box-shadow: 0 4px 12px rgba(30, 140, 65, 0.35);
     `;
     
     backToTopBtn.addEventListener('click', () => {
@@ -350,12 +355,12 @@ const createBackToTop = () => {
     });
     
     backToTopBtn.addEventListener('mouseenter', () => {
-        backToTopBtn.style.background = '#2980b9';
+        backToTopBtn.style.background = 'linear-gradient(135deg, #5dd87a 0%, #34c759 100%)';
         backToTopBtn.style.transform = 'translateY(-3px)';
     });
     
     backToTopBtn.addEventListener('mouseleave', () => {
-        backToTopBtn.style.background = '#339a11';
+        backToTopBtn.style.background = 'linear-gradient(135deg, #25b86a 0%, #169c4a 100%)';
         backToTopBtn.style.transform = 'translateY(0)';
     });
     

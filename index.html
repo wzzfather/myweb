@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>魏子政 - 个人简历</title>
+    <meta name="description" content="魏子政：计算机硕士，金融行业后端开发，Python / FastAPI / MySQL / AI工程化 · 个人简历">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -18,6 +19,7 @@
                     <li><a href="#education">教育经历</a></li>
                     <li><a href="#projects">项目经历</a></li>
                     <li><a href="#skills">技能</a></li>
+                    <li><a href="#honors">学术与荣誉</a></li>
                     <li><a href="#contact">联系方式</a></li>
                 </ul>
                 <div class="hamburger">
@@ -35,13 +37,13 @@
                     <img src="images/profile.jpg" alt="魏子政" onerror="this.style.display='none'">
                 </div>
                 <h1>魏子政</h1>
-                <p class="title">开发工程师 | 数据分析师 | AI产品开发</p>
+                <p class="title">后端开发工程师 · AI 应用与数据工程</p>
                 <p class="description">
-                    计算机科学硕士，具备扎实的数学基础和丰富的数据分析及大模型产品开发经验。擅长深度学习与图像处理，熟悉主流深度学习框架，拥有多个AI项目实战经验。精通Python、Java及多种数据库，熟悉数据中台及知识库系统架构设计。具备良好的团队协作能力，能高效推动项目落地。
+                    计算机科学硕士，约 2 年金融行业后端开发经验，精于 Python / FastAPI / MySQL，主导过智能问数、消保审查、数据中台等企业级交付。熟练使用 Dify、扣子（Coze）、MaxKB 等平台将大模型落地为后端服务；日常深度使用 Claude Code、Cursor、OpenClaw 等工具做智能体与工作流编排。在浦发银行场景中通过「意图识别 → SQL 生成 → 校验执行」链路将 SQL 准确率从 67% 提升至 91%。发表 SCI 论文 1 篇，星河超级个体黑客松优胜奖得主。
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn primary">联系我</a>
-                    <a href="assets/resume.pdf" class="btn secondary" target="_blank">
+                    <a href="assets/resume.pdf" class="btn secondary" target="_blank" rel="noopener">
                         <i class="fas fa-download"></i> 下载简历
                     </a>
                 </div>
@@ -54,47 +56,51 @@
                 <h2>工作经历</h2>
                 <div class="line"></div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>开发工程师</h3>
-                        <p class="company">复深蓝软件股份有限公司 研发部</p>
-                        <p class="duration">2025年5月 - 至今</p>
-                        <ul>
-                            <li>负责公司核心数据平台及知识库系统设计与开发，参与整体架构规划及关键模块实现</li>
-                            <li>主导本地化知识库管理系统建设，基于MinIO、Faiss及FastAPI实现高并发语义搜索和文档全流程自动化处理</li>
-                            <li>配置腾讯WeData平台实时及离线同步任务，开发PySpark脚本及守护进程，完成离线DDL变更监控与字段同步</li>
-                            <li>与运维团队协作优化系统性能，提升数据处理效率，确保项目按时交付</li>
-                        </ul>
+
+            <div class="experience-split">
+                <h3 class="experience-subheading">全职工作</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>开发工程师</h3>
+                            <p class="company">复深蓝软件股份有限公司</p>
+                            <p class="duration">2025 年 5 月 — 至今</p>
+                            <ul>
+                                <li>负责金融行业数据平台与 AI 应用后端开发；主导多项系统架构设计与交付</li>
+                                <li>驻场浦发银行、鼎和保险、申能财险等业务现场，对齐需求迭代与投产节奏</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>新能源板块行业分析助理</h3>
-                        <p class="company">五矿证券有限公司</p>
-                        <p class="duration">2024年10月 - 2025年1月</p>
-                        <ul>
-                            <li>负责跟踪新能源车企数据，完善并维护爬虫系统以进行各车企线下营业网点信息的及时更新</li>
-                            <li>维护国内及欧洲乘用车市场的相关数据库并在Excel中绘制图表</li>
-                            <li>利用数据及图表进行双周报、月报及季报的跟踪及撰写</li>
-                            <li>使用Python、MySQL辅助进行数据及信息的更新维护，熟悉IFinD数据库的接口及函数调用</li>
-                        </ul>
+            </div>
+
+            <div class="experience-split">
+                <h3 class="experience-subheading">实习经历</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>新能源板块 · Python 开发与数据分析</h3>
+                            <p class="company">五矿证券有限公司</p>
+                            <p class="duration">2024 年 11 月 — 2025 年 1 月</p>
+                            <ul>
+                                <li>跟踪新能源车企与乘用车市场动态，建设与维护爬虫与结构化数据库（含 iFinD、钢联等数据源）</li>
+                                <li>结合 Excel/VBA 完成双周报 / 月报 / 季报数据分析与撰写，提升研报产出效率</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>前端开发实习生</h3>
-                        <p class="company">中电福富信息科技有限公司 CPCP部门</p>
-                        <p class="duration">2023年7月 - 2023年8月</p>
-                        <ul>
-                            <li>参与CPCP项目的维护，协助（福建）数字支撑团队，负责客户经营支撑渠道的维护</li>
-                            <li>完善产品之间的依赖关系的建立，以及对应警告窗口的补充，并及时上传以便测试团队完成后续测试发布</li>
-                            <li>主要工作基于前端界面与基于zkoss框架的后端界面中间的serve层</li>
-                            <li>使用IntelliJ IDEA编译器，用MySQL作为数据库，采用Spring作为分布式服务框架</li>
-                        </ul>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>前端开发实习生</h3>
+                            <p class="company">中电福富信息科技有限公司 · CPCP 渠道项目</p>
+                            <p class="duration">2023 年 7 月 — 2023 年 8 月</p>
+                            <ul>
+                                <li>维护客户经营支撑渠道，梳理产品依赖并补充告警与提示交互</li>
+                                <li>基于前端与 ZKoss 服务端中间层迭代功能，缩短联调上线周期</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,28 +116,23 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>计算机科学学系硕士学位</h3>
-                        <p class="company">台湾元智大学</p>
-                        <p class="duration">2022年9月 - 2024年6月</p>
+                        <h3>计算机科学与技术 · 硕士学位</h3>
+                        <p class="company">元智大学 · 中国台湾</p>
+                        <p class="duration">2022 年 9 月 — 2024 年 6 月</p>
                         <ul>
-                            <li>该校在台湾计算机相关专业综合排名第十，在民办高校中排名第一</li>
                             <li>主修课程：人工智能、深度学习、人工智能与医学应用</li>
-                            <li>荣获全奖奖学金</li>
-                            <li>硕士期间担任影像处理及计算机理论课程助教</li>
+                            <li>在学期间获全额奖学金</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>学士学位</h3>
-                        <p class="company">台湾金门大学</p>
-                        <p class="duration">2018年9月 - 2022年6月</p>
+                        <h3>食品科学 · 本科学历</h3>
+                        <p class="company">金门大学 · 中国台湾</p>
+                        <p class="duration">2018 年 9 月 — 2022 年 6 月</p>
                         <ul>
-                            <li>以系所第三名毕业（GPA: 4.63/5，排名3/41）</li>
-                            <li>2020、2021年获得成绩优良奖；2022年获得智育奖</li>
-                            <li>2023-2024连续两年获得全额奖学金（有庠奖学金）</li>
-                            <li>长期担任金大陆联会干部，2019年度被授予优秀干部奖</li>
+                            <li>以系所第三名毕业（GPA 4.63/5，排名 3/41）</li>
                         </ul>
                     </div>
                 </div>
@@ -147,91 +148,96 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>复深蓝内网知识库管理系统开发（RAG）</h3>
+                        <h3>浦发银行 · 智能问数平台</h3>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="project-link" title="公司内部项目"><i class="fas fa-building"></i></span>
                         </div>
                     </div>
+                    <p class="project-meta">后端开发工程师 · 2025.09 — 2025.12</p>
                     <p class="project-description">
-                        设计并实现本地化知识库管理系统，用于公司内部资料的管理及智能化查询。使用MinIO存储文档与向量数据，结合Faiss向量检索与FastAPI提供高并发语义搜索服务。实现文档上传、解析、切分、向量化、检索全流程自动化。
+                        为业务人员搭建自然语言问数能力，链路含意图识别、SQL 生成与安全校验执行；沉淀业务语义映射规则库以降低模型幻觉并防护全表扫描等风险。<strong>SQL 准确率由 67% 提升至 91%</strong>，支持自助式数据查询。
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">MinIO</span>
-                        <span class="tech-tag">Faiss</span>
+                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">NL2SQL</span>
+                        <span class="tech-tag">语义规则库</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>友邦保险数据中台项目开发</h3>
+                        <h3>鼎和保险 · 消保审查系统</h3>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="project-link" title="公司内部项目"><i class="fas fa-building"></i></span>
                         </div>
                     </div>
+                    <p class="project-meta">后端开发工程师 · 2025.07 — 至今</p>
                     <p class="project-description">
-                        基于腾讯WeData平台配置实时及离线业务数据同步任务，开发PySpark脚本和守护进程，实现离线任务DDL变更监控与字段同步。参与数据中台整体架构设计，保障数据流转稳定高效，符合业务逻辑需求。
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">腾讯WeData</span>
-                        <span class="tech-tag">PySpark</span>
-                        <span class="tech-tag">数据中台</span>
-                        <span class="tech-tag">实时同步</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>智能微信教学助手开发（RAG）</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        基于RAG技术，结合微信机器人框架，开发能够基于本地化数据库内容实现实时智能回复的微信机器人。采用Quant数据库进行向量存储，支持LinkAI API、百度千帆API等多种大模型接口集成，实现智能问答功能。
+                        建设金融消费者权益保护审查能力：PDF/Word/OCR 解析、RAG 消保知识库问答与合规风险提示。基于 RabbitMQ 做异步调度，并实现统一任务框架（重试、告警、日志追踪）；优化队列与调度策略以降低 GPU 争用。
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">微信机器人</span>
-                        <span class="tech-tag">Quant数据库</span>
-                        <span class="tech-tag">大模型API</span>
+                        <span class="tech-tag">RabbitMQ</span>
+                        <span class="tech-tag">文档解析</span>
+                        <span class="tech-tag">异步任务框架</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>基于CSDA-UNet的海马回分割模型开发</h3>
+                        <h3>申能财险 · WeData 数据中台</h3>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="project-link" title="公司内部项目"><i class="fas fa-database"></i></span>
                         </div>
                     </div>
+                    <p class="project-meta">数据开发工程师 · 2025.06 — 2025.10</p>
                     <p class="project-description">
-                        与台湾坜新医院医师合作开发串联空间与深度注意力的UNet模型，优化海马迴区域的自动分割。结合空间注意力模块与层间注意力模块，实现对三维空间和二维层间信息的提取与优化。模型在海马回分割任务中Dice系数达到0.9469，IOU值达到0.9293。
+                        配置保险、理赔、财务等核心业务的 Oracle/MySQL 入湖同步（ODS/DWD/ADS）；参与分层与主题域建模，梳理<strong>表级与字段级血缘</strong>，输出 DDL 变更影响与同步风险评估规范，满足监管可追溯要求。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">腾讯 WeData</span>
+                        <span class="tech-tag">OceanBase/Hive</span>
+                        <span class="tech-tag">血缘治理</span>
+                        <span class="tech-tag">数据分层</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AI 驱动个人职涯运营系统</h3>
+                        <div class="project-links">
+                            <a href="https://mp.weixin.qq.com/s/KsTMCuAXDTPXZ3rUThS44w" class="project-link" target="_blank" rel="noopener" title="活动报道"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <p class="project-meta">全栈独立开发 · 2025</p>
+                    <p class="project-description">
+                        独立完成从构想、MVP 到部署上线：<strong>FastAPI + Vue3</strong> 全栈架构，串联工作记录 → 心得沉淀 → AI 生成简历。<strong>星河超级个体黑客松竞赛优胜奖</strong>。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Vue 3</span>
+                        <span class="tech-tag">大模型接入</span>
+                        <span class="tech-tag">产品闭环</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>深度学习产学应用 · 海马体分割与高梁酒防伪</h3>
+                        <div class="project-links">
+                            <a href="https://doi.org/10.3390/jimaging11090311" class="project-link" target="_blank" rel="noopener" title="论文 DOI"><i class="fas fa-book"></i></a>
+                        </div>
+                    </div>
+                    <p class="project-meta">研究方向 · 2023.09 — 2024.01</p>
+                    <p class="project-description">
+                        研发 <strong>CSDA-UNet</strong>（空间 + 层间注意力）用于 T1 MRI 海马体分割：<strong>Dice 0.9512</strong>（ADNI），发表于 <em>Journal of Imaging</em>。并行基于 YOLOv5 完成金门高粱酒正品鉴定移动端应用，准确率约 89%。
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">深度学习</span>
-                        <span class="tech-tag">医学影像</span>
                         <span class="tech-tag">U-Net</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>金门高粱酒正品鉴定APP之开发与应用</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        与金门高粱酒厂技术部门产学协作，开发用于鉴定市售金门高粱酒是否为原厂正品的APP。基于YOLOv5算法，根据高粱酒正品瓶身标签特征图片为数据集进行训练，实现防伪辨别功能。最终准确率达到89%，相比立项时提升12%。
-                    </p>
-                    <div class="project-tech">
                         <span class="tech-tag">YOLOv5</span>
-                        <span class="tech-tag">计算机视觉</span>
-                        <span class="tech-tag">移动应用</span>
-                        <span class="tech-tag">目标检测</span>
+                        <span class="tech-tag">医学影像</span>
                     </div>
                 </div>
             </div>
@@ -245,58 +251,28 @@
             </div>
             <div class="skills-container">
                 <div class="skills-category">
-                    <h3><i class="fas fa-code"></i> 编程语言</h3>
+                    <h3><i class="fas fa-server"></i> 后端与服务</h3>
                     <div class="skills-list">
                         <div class="skill-item">
-                            <span>Python</span>
+                            <span>Python · FastAPI / REST</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="95"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>Java</span>
+                            <span>Java · Spring 生态</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
+                                <div class="skill-progress" data-progress="82"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>SQL</span>
+                            <span>MySQL · Oracle · OceanBase · Hive · SQL 调优</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
+                                <div class="skill-progress" data-progress="92"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>前端技术(HTML/CSS/JS)</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-brain"></i> 深度学习与AI</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <span>PyTorch</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>PaddlePaddle</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Faiss向量搜索</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>FastAPI</span>
+                            <span>Redis · RabbitMQ · 高吞吐异步任务</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="85"></div>
                             </div>
@@ -305,32 +281,126 @@
                 </div>
 
                 <div class="skills-category">
-                    <h3><i class="fas fa-database"></i> 数据库与大数据</h3>
+                    <h3><i class="fas fa-database"></i> 数据工程</h3>
                     <div class="skills-list">
                         <div class="skill-item">
-                            <span>MySQL/Oracle</span>
+                            <span>ODS / DWD / ADS 分层与主题域建模</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>入湖同步、DDL 变更影响与血缘梳理</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="86"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>WeData（平台级配置与实践）</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>监管审计可追溯数据治理</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> AI 工程化</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>RAG · NL2SQL · Prompt / 意图 / 向量检索</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="91"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Dify · MaxKB · 扣子 Coze Workflow</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>PyTorch · 深度学习与论文级实验</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="86"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>智能体 Skill / 多工具编排 / 记忆与工作流</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="87"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-gears"></i> 运维、AI 开发与协作</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>Linux · Docker · Nginx</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Claude Code · Cursor IDE · OpenClaw</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="90"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>Hive/Sybase/Iceberg</span>
+                            <span>前端基础（Vue3 HTML/CSS/JS）</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
+                                <div class="skill-progress" data-progress="76"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>PySpark</span>
+                            <span>跨团队交付与线上稳定性治理</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
+                                <div class="skill-progress" data-progress="88"></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <span>MinIO/数据中台</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学术与荣誉 -->
+        <section class="section" id="honors">
+            <div class="section-header">
+                <h2>学术与荣誉</h2>
+                <div class="line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Cascaded Spatial and Depth Attention UNet for Hippocampus Segmentation</h3>
+                        <p class="company">Zi-Zheng Wei, Bich-Thuy Vu, Maisam Abbas, Ran-Zan Wang · <em>Journal of Imaging</em>, Vol.11 No.9, 2025</p>
+                        <p class="duration">DOI: <a href="https://doi.org/10.3390/jimaging11090311" target="_blank" rel="noopener">10.3390/jimaging11090311</a></p>
+                        <ul>
+                            <li>CSDA-UNet 集成 SA 与 ISA 注意力；ADNI Dice <strong>0.9512</strong>，Decathlon Dice <strong>0.9907</strong>（训练集）</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>荣誉与职务</h3>
+                        <p class="company">竞赛 · 奖学金 · 校园服务</p>
+                        <ul>
+                            <li>星河超级个体黑客松竞赛 <strong>优胜奖</strong></li>
+                            <li>2023—2024 连续两年 <strong>全额奖学金（有庠）</strong></li>
+                            <li>影像处理与计算机理论课程 <strong>助教</strong></li>
+                            <li><strong>优秀干部奖</strong> · 金门大学大陆联会</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -355,21 +425,28 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>电话</h3>
-                            <p>+86 185-5917-9213</p>
+                            <p>+86 18559179213</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h3>个人网站</h3>
+                            <p>https://wzzfather.github.io/myweb/</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-birthday-cake"></i>
                         <div>
                             <h3>年龄</h3>
-                            <p id="age-display">24岁</p>
+                            <p id="age-display">—</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-graduation-cap"></i>
                         <div>
                             <h3>学历</h3>
-                            <p>台湾元智大学计算机科学硕士</p>
+                            <p>元智大学 · 计算机科学与技术硕士</p>
                         </div>
                     </div>
                 </div>
@@ -378,7 +455,7 @@
 
         <!-- 页脚 -->
         <footer class="footer">
-            <p>&copy; 2025 魏子政. 保留所有权利.</p>
+            <p>&copy; 2026 魏子政 · 个人简历</p>
         </footer>
     </div>
 
