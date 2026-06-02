@@ -318,6 +318,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始加载时执行一次技能条动画检查
     setTimeout(animateSkillBars, 500);
+
+    // 生成当前页面 URL 的二维码
+    const qrcodeEl = document.getElementById('qrcode');
+    if (qrcodeEl && typeof QRCode !== 'undefined') {
+        const size = window.innerWidth <= 480 ? 110 : 140;
+        try {
+            new QRCode(qrcodeEl, {
+                text: window.location.href,
+                width: size,
+                height: size,
+                colorDark: '#056c35',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+            // 点击二维码复制链接
+            qrcodeEl.style.cursor = 'pointer';
+            qrcodeEl.addEventListener('click', () => {
+                const tmp = document.createElement('input');
+                tmp.value = window.location.href;
+                document.body.appendChild(tmp);
+                tmp.select();
+                try { document.execCommand('copy'); } catch (e) {}
+                document.body.removeChild(tmp);
+                showNotification('已复制本页链接：' + window.location.href);
+            });
+        } catch (err) {
+            console.warn('二维码生成失败：', err);
+            qrcodeEl.parentElement.style.display = 'none';
+        }
+    } else if (qrcodeEl) {
+        // 库未加载，降级隐藏卡片
+        qrcodeEl.parentElement.style.display = 'none';
+    }
     
     console.log('个人简历网站已加载完成 🚀');
 });
