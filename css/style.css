@@ -189,22 +189,25 @@ body {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Hero 区域二维码卡片 */
+/* Hero 区域二维码卡片（右上角悬浮） */
 .hero-qrcode {
-    display: inline-block;
-    margin-top: 2.2rem;
-    padding: 14px 14px 10px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 2;
+    padding: 12px 12px 8px;
     background: rgba(255, 255, 255, 0.96);
     border-radius: 14px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
     animation: fadeInUp 1s ease-out 0.8s both;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .hero-qrcode:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
 }
 
 .hero-qrcode #qrcode {
@@ -221,11 +224,11 @@ body {
 
 .hero-qrcode .qrcode-label {
     margin: 8px 0 0;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: #056c35;
     font-weight: 600;
     letter-spacing: 0.02em;
-    text-align: center;
+    white-space: nowrap;
 }
 
 .hero-qrcode .qrcode-label i {
@@ -672,8 +675,13 @@ body {
     }
 
     .hero-qrcode {
-        margin-top: 1.6rem;
-        padding: 10px 10px 8px;
+        top: 20px;
+        right: 20px;
+        padding: 8px 8px 6px;
+    }
+
+    .hero-qrcode .qrcode-label {
+        font-size: 0.7rem;
     }
 }
 
