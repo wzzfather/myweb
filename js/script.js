@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 生成当前页面 URL 的二维码
     const qrcodeEl = document.getElementById('qrcode');
     if (qrcodeEl && typeof QRCode !== 'undefined') {
-        const size = window.innerWidth <= 480 ? 110 : 140;
+        const size = window.innerWidth <= 1024 ? 120 : 140;
         try {
             new QRCode(qrcodeEl, {
                 text: window.location.href,

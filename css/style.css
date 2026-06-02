@@ -673,15 +673,19 @@ body {
     .section-header h2 {
         font-size: 2rem;
     }
+}
 
-    /* 移动端：二维码改为简介下方居中排布 */
+@media (max-width: 1024px) {
+    /* 中小屏（含所有手机/平板/微信内置浏览器）：二维码改为简介下方居中 */
     .hero-qrcode {
-        position: static;
-        top: auto;
-        right: auto;
-        display: inline-block;
-        margin: 1.6rem auto 0;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        display: block;
+        width: fit-content;
+        margin: 1.8rem auto 0;
         padding: 10px 10px 8px;
+        z-index: 2;
     }
 
     .hero-qrcode .qrcode-label {
