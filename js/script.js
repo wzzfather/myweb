@@ -79,11 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const force = (1 - dist / fleeRadius) * fleeStrength;
                 const tx = -(dx / dist) * force;
                 const ty = -(dy / dist) * force;
+                el.style.animationPlayState = 'paused';
                 el.style.transition = 'transform 0.15s ease-out';
                 el.style.transform = `translate(${tx}px, ${ty}px)`;
-            } else {
+            } else if (el.style.animationPlayState === 'paused') {
                 el.style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
                 el.style.transform = 'translate(0, 0)';
+                const ref = el;
+                clearTimeout(ref._resumeTimer);
+                ref._resumeTimer = setTimeout(() => {
+                    ref.style.animationPlayState = 'running';
+                    ref.style.transform = '';
+                }, 1300);
             }
         });
     });
