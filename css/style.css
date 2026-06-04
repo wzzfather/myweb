@@ -712,6 +712,55 @@ body {
     }
 }
 
+/* 卡片内嵌二维码 */
+.card-qrcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.card-qrcode #qrcode-wechat,
+.card-qrcode #qrcode-doi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card-qrcode #qrcode-wechat img,
+.card-qrcode #qrcode-wechat canvas,
+.card-qrcode #qrcode-doi img,
+.card-qrcode #qrcode-doi canvas {
+    display: block;
+    border-radius: 4px;
+}
+
+.card-qrcode-label {
+    margin: 6px 0 0;
+    font-size: 0.75rem;
+    color: #888;
+    white-space: nowrap;
+}
+
+/* 学术模块内的内联二维码 */
+.card-qrcode-inline {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0.8rem;
+    padding: 8px 12px;
+}
+
+.card-qrcode-inline .card-qrcode-label {
+    margin: 0;
+}
+
 /* 滚动行为 */
 html {
     scroll-behavior: smooth;

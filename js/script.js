@@ -59,6 +59,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // 生成装饰图片
     generateRandomDecorativeImages();
 
+    // 装饰图片鼠标靠近自动远离
+    const fleeRadius = 100;
+    const fleeStrength = 60;
+    const decoImgs = document.querySelectorAll('.decorative-images');
+    decoImgs.forEach(el => {
+        el.style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        el.style.willChange = 'transform';
+    });
+    document.addEventListener('mousemove', (e) => {
+        decoImgs.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < fleeRadius && dist > 0) {
+                const force = (1 - dist / fleeRadius) * fleeStrength;
+                const tx = -(dx / dist) * force;
+                const ty = -(dy / dist) * force;
+                el.style.transition = 'transform 0.15s ease-out';
+                el.style.transform = `translate(${tx}px, ${ty}px)`;
+            } else {
+                el.style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                el.style.transform = 'translate(0, 0)';
+            }
+        });
+    });
+
     // 动态更新年龄（与简历一致：按公历生日计算，避免仅用「当前年 − 出生年」造成的偏差）
     const updateAge = () => {
         const birth = new Date(2001, 0, 1); // 与简历「25 岁（2026）」对齐的参考出生日
@@ -348,8 +377,42 @@ document.addEventListener('DOMContentLoaded', function() {
             qrcodeEl.parentElement.style.display = 'none';
         }
     } else if (qrcodeEl) {
-        // 库未加载，降级隐藏卡片
         qrcodeEl.parentElement.style.display = 'none';
+    }
+
+    // 生成公众号竞赛报道 & SCI 论文的二维码
+    const miniQrs = [
+        { id: 'qrcode-wechat', url: 'https://mp.weixin.qq.com/s/KsTMCuAXDTPXZ3rUThS44w', label: '活动报道' },
+        { id: 'qrcode-doi', url: 'https://doi.org/10.3390/jimaging11090311', label: 'SCI 论文' }
+    ];
+    if (typeof QRCode !== 'undefined') {
+        miniQrs.forEach(({ id, url, label }) => {
+            const container = document.getElementById(id);
+            if (!container) return;
+            try {
+                new QRCode(container, {
+                    text: url,
+                    width: 90,
+                    height: 90,
+                    colorDark: '#333333',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+                container.style.cursor = 'pointer';
+                container.addEventListener('click', () => {
+                    const tmp = document.createElement('input');
+                    tmp.value = url;
+                    document.body.appendChild(tmp);
+                    tmp.select();
+                    try { document.execCommand('copy'); } catch (e) {}
+                    document.body.removeChild(tmp);
+                    showNotification('已复制' + label + '链接：' + url);
+                });
+            } catch (err) {
+                console.warn('二维码生成失败（' + label + '）：', err);
+                container.parentElement.style.display = 'none';
+            }
+        });
     }
     
     console.log('个人简历网站已加载完成 🚀');
