@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
     decoImgs.forEach(el => {
         el.style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         el.style.willChange = 'transform';
+        el.dataset.origAnim = el.style.animation || getComputedStyle(el).animation;
+        el._isLeft = el.classList.contains('decorative-left');
+        el._active = false;
     });
     document.addEventListener('mousemove', (e) => {
         decoImgs.forEach(el => {
@@ -79,17 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 const force = (1 - dist / fleeRadius) * fleeStrength;
                 const tx = -(dx / dist) * force;
                 const ty = -(dy / dist) * force;
-                el.style.animationPlayState = 'paused';
+                const scale = el._isLeft ? 'scaleX(-1)' : '';
+                el.style.animation = 'none';
                 el.style.transition = 'transform 0.15s ease-out';
-                el.style.transform = `translate(${tx}px, ${ty}px)`;
-            } else if (el.style.animationPlayState === 'paused') {
+                el.style.transform = `${scale} translate(${tx}px, ${ty}px)`;
+                el._active = true;
+                clearTimeout(el._resumeTimer);
+            } else if (el._active) {
+                const scale = el._isLeft ? 'scaleX(-1)' : '';
                 el.style.transition = 'transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                el.style.transform = 'translate(0, 0)';
-                const ref = el;
-                clearTimeout(ref._resumeTimer);
-                ref._resumeTimer = setTimeout(() => {
-                    ref.style.animationPlayState = 'running';
-                    ref.style.transform = '';
+                el.style.transform = `${scale} translate(0, 0)`;
+                el._active = false;
+                clearTimeout(el._resumeTimer);
+                el._resumeTimer = setTimeout(() => {
+                    el.style.transform = '';
+                    el.style.animation = '';
                 }, 1300);
             }
         });

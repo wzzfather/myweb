@@ -790,7 +790,6 @@ html {
     z-index: -1;
     pointer-events: none;
     opacity: 0.55;
-    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .decorative-images img {
